@@ -1,0 +1,1228 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* montserrat-regular - latin_cyrillic */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/montserrat-v25-latin_cyrillic-regular.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('../fonts/montserrat-v25-latin_cyrillic-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/montserrat-v25-latin_cyrillic-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/montserrat-v25-latin_cyrillic-regular.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/montserrat-v25-latin_cyrillic-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/montserrat-v25-latin_cyrillic-regular.svg#Montserrat') format('svg'); /* Legacy iOS */
+}
+/* montserrat-500 - latin_cyrillic */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../fonts/montserrat-v25-latin_cyrillic-500.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('../fonts/montserrat-v25-latin_cyrillic-500.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/montserrat-v25-latin_cyrillic-500.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/montserrat-v25-latin_cyrillic-500.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/montserrat-v25-latin_cyrillic-500.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/montserrat-v25-latin_cyrillic-500.svg#Montserrat') format('svg'); /* Legacy iOS */
+}
+/* montserrat-600 - latin_cyrillic */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  src: url('../fonts/montserrat-v25-latin_cyrillic-600.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('../fonts/montserrat-v25-latin_cyrillic-600.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/montserrat-v25-latin_cyrillic-600.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/montserrat-v25-latin_cyrillic-600.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/montserrat-v25-latin_cyrillic-600.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/montserrat-v25-latin_cyrillic-600.svg#Montserrat') format('svg'); /* Legacy iOS */
+}
+html{
+    box-sizing: border-box;
+}
+*,*::before, *::after{
+    box-sizing: inherit;
+}
+
+body{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-size: 16px;
+    line-height: 1.2; 
+    font-weight: normal;
+    color: #FFFFFF;
+}
+/* For alll */
+
+.wrapper{
+    max-width: 1290px;
+    margin: 0 auto;
+}
+
+.mobile-menu {
+    display: none;
+}
+
+.menu-ico{
+    width: 35px;
+}
+
+input{
+    display:none;
+}
+
+.lower label:hover{
+    cursor:pointer;
+}
+
+.overlay{
+    position: fixed;
+    width: 300px;
+    height: 300px;
+    top: 20px;
+    right: 11%;
+    background: #DADDD8;
+}
+
+.overlay label{
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    right: 12px;
+    top: 12px;
+    background-image: url(../img/png/close.png);
+    background-size: 35px;
+    z-index: 2;
+    cursor:pointer;
+}
+
+.overlay nav {
+    text-align: center;
+    position: relative;
+    top: 50%;
+    height: 60%;
+    font-size: 54px;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.overlay ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    display: inline-block;
+    height: 100%;
+    position: relative;
+}
+
+.overlay ul li {
+    display: block;
+    height: 20%;
+    height: calc(100% / 5);
+    min-height: 54px;
+}
+
+.overlay ul li a {
+    font-weight: 300;
+    font-size: 36px;
+    display: block;
+    color: #434A42;
+    text-decoration:none;
+    -webkit-transition: color 0.2s;
+    transition: color 0.2s;
+    font-family: 'Comfortaa';
+}
+
+.overlay ul li a:hover,
+.overlay ul li a:focus {
+    color: #EF9CA7;
+}
+
+.lower~.overlay-hugeinc{
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: opacity 0.5s, visibility 0s 0.5s;
+    transition: opacity 0.5s, visibility 0s 0.5s;
+}
+
+#op:checked~.overlay-hugeinc{
+    opacity: 1;
+    visibility: visible;
+    -webkit-transition: opacity 0.5s;
+    transition: opacity 0.5s;
+}
+
+.overlay-hugeinc nav ul {
+    opacity: 0.4;
+    -webkit-transform: translateY(-25%) rotateX(35deg);
+    transform: translateY(-25%) rotateX(35deg);
+    -webkit-transition: -webkit-transform 0.5s, opacity 0.5s;
+    transition: transform 0.5s, opacity 0.5s;
+}
+
+#op:checked~.overlay-hugeinc nav ul {
+    opacity: 1;
+    -webkit-transform: rotateX(0deg);
+    transform: rotateX(0deg);
+}
+
+#op:not(:checked)~.overlay-hugeinc nav ul {
+    -webkit-transform: translateY(25%) rotateX(-35deg);
+    transform: translateY(25%) rotateX(-35deg);
+}
+
+/*header*/
+
+.header{
+    background-color: #222222; 
+}
+
+.site_title{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 40px;
+}
+
+.header_logo{
+    width: 330px;
+    height: 110px;
+}
+.header_list{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.header_menu{
+    margin-right: 20px;
+}
+
+.header_menu:last-child{
+    margin-right: 0;
+}
+
+.header_link{
+    font-weight: 400;
+    font-size: 35px;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.header_active_link{
+    font-weight: 600;
+    font-size: 35px;
+    color: #FFFFFF;
+    text-decoration-line: underline;
+    text-underline-offset: 12px;
+    text-decoration-thickness: 1px;
+    text-decoration-color: rgba(255, 255, 255, 0.3);
+}
+
+.header_basket{
+    width: 330px;
+    height: 110px;
+}
+
+/*header end*/
+/* main*/
+
+/* home paige*/
+.site_background{
+    background: #222222;
+}
+.first_job_menu{
+    height: 100%;
+    background-image: url(../img/png/Phon.png);
+    background-repeat: no-repeat;
+    background-position: top right;
+}
+.first_main_title{
+    padding-top: 31px;
+    max-width: 630px;
+    font-weight: 500;
+    font-size: 70px;
+    line-height: 85px;
+    color: #FFFFFF;
+}
+.first_main_subtitle{
+    max-width: 440px;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 37px;
+    color: #FFFFFF;
+    padding-bottom: 24px
+}
+
+.second_job_menu{
+    height: 100%;
+    padding-bottom: 50px;
+}
+.second_main_title{
+    text-align: center;
+    font-weight: 500;
+    font-size: 100px;
+    line-height: 122px;
+    color: #FFFFFF;
+}
+
+.all_tiles{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+.tile {
+    position: relative;
+    text-align: center;
+    width: 410px;
+    height: 540px;
+
+}
+
+.text_of_tile{
+    text-align: center;
+    width: 410px;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 37px;
+    position: absolute;
+    top: 65%;
+    color: #222222;
+}
+.button_of_buy{
+    width: 410px;
+    height: 50px;
+    align-items: center;
+    position: absolute;
+    top: 88%;
+}
+
+/* end home paige*/
+
+
+/* menu with dishes paige*/
+
+.menu{
+    height: 100%;
+    padding-bottom: 90px;
+}
+
+    /* end menu paige*/
+
+
+    /* about */
+
+.first_about_menu{
+    height: 100%;
+    background-image: url(../img/png/sushisetone.png);
+    background-repeat: no-repeat;
+    background-position: top right;
+}
+.second_about_menu{
+    height: 100%;    padding-bottom: 28px;
+}
+.title_about{
+    padding-top: 33px;
+    font-weight: 600;
+    font-size: 80px;
+    line-height: 98px;
+    text-align: center;
+    color: #FFFFFF;
+}
+.first_about_subtitle{
+    padding-top: 20px;
+    max-width: 740px;
+    font-weight: 500;
+    font-size: 35px;
+    line-height: 43px;
+    color: #FFFFFF;
+}
+.container_of_text{
+    display: flex;
+    justify-content: right;
+    background-image: url(../img/png/sushisettwo.png);
+    background-repeat: no-repeat;
+    background-position: left;
+    padding-bottom: 30px;
+}
+.second_about_subtitle{
+    max-width: 740px;
+    padding-top: 64px;
+    font-weight: 500;
+    font-size: 35px;
+    line-height: 43px;
+    color: #FFFFFF;
+}
+
+.button_of_order{
+    display: flex;
+    justify-content: center;
+}
+
+/* end about*/
+
+
+/* main end */
+
+
+/* footer */
+
+.footer{
+    background: #DADDD8;
+    height: 100%;
+}
+.footer_title{
+    color: #222222;
+    text-align: center;
+    font-weight: 400;
+    font-size: 50px;
+    line-height: 61px;
+}
+.soc_media{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-bottom: 6px;
+}
+.telegram{
+    padding-right: 15px;
+}
+.instagram{
+    padding-left: 15px;
+}
+
+/* footer end */
+@media (max-width: 1290px) {
+    .wrapper{
+        max-width: 940px;
+        margin: 0 auto;
+    }
+
+
+    /*header*/
+
+    .header{
+        background-color: #222222;
+    }
+
+    .site_title{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: 40px;
+    }
+
+    .header_logo{
+        width: 240px;
+        height: 80px;
+    }
+    .header_logo-pic{
+        width: 240px;
+        height: 80px;
+    }
+    .header_list{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .header_menu{
+        margin-right: 15px;
+    }
+
+    .header_menu:last-child{
+        margin-right: 0;
+    }
+
+    .header_link{
+        font-weight: 400;
+        font-size: 25px;
+        color: #FFFFFF;
+        text-decoration: none;
+    }
+
+    .header_active_link{
+        font-weight: 600;
+        font-size: 25px;
+        color: #FFFFFF;
+        text-decoration-line: underline;
+        text-underline-offset: 9px;
+        text-decoration-thickness: 1px;
+        text-decoration-color: rgba(255, 255, 255, 0.3);
+    }
+
+    .header_basket{
+        width: 240px;
+        height: 80px;
+    }
+
+    .header_basket-pic{
+        width: 240px;
+        height: 80px;
+    }
+
+
+    /*header end*/
+    /* main*/
+
+    /* home paige*/
+    .site_background{
+        background: #222222;
+    }
+    .first_job_menu{
+        height: 100%;
+        background-image: url(../img/png/Phon.png);
+        background-size: 65% auto;
+        background-repeat: no-repeat;
+        background-position: top right;
+    }
+    .first_main_title{
+        padding-top: 31px;
+        max-width: 460px;
+        font-weight: 500;
+        font-size: 51px;
+        line-height: 60px;
+        color: #FFFFFF;
+    }
+    .first_main_subtitle{
+        max-width: 320px;
+        font-weight: 400;
+        font-size: 22px;
+        line-height: 25px;
+        color: #FFFFFF;
+        padding-bottom: 24px
+    }
+
+    .second_job_menu{
+        height: 100%;
+        padding-bottom: 50px;
+    }
+    .second_main_title{
+        text-align: center;
+        font-weight: 500;
+        font-size: 75px;
+        line-height: 90px;
+        color: #FFFFFF;
+    }
+
+    .button_of_order_b-pic{
+        width: 260px;
+        height: 90px;
+    }
+
+    .all_tiles{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .tile {
+        position: relative;
+        text-align: center;
+        width: 300px;
+        height: 395px;
+
+    }
+    .philadelphia-pic{
+        width: 300px;
+        height: 395px;
+    }
+
+    .nigiri-pic{
+        width: 300px;
+        height: 395px;
+    }
+
+    .california-pic{
+        width: 300px;
+        height: 395px;
+    }
+
+    .futomaki-pic{
+        width: 300px;
+        height: 395px;
+    }
+
+    .dragon-pic{
+        width: 300px;
+        height: 395px;
+    }
+
+    .gunkan-pic{
+        width: 300px;
+        height: 395px;
+    }
+
+    .text_of_tile{
+        text-align: center;
+        width: 300px;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 25px;
+        position: absolute;
+        top: 65%;
+        color: #222222;
+    }
+    .button_of_buy{
+        width: 300px;
+        height: 35px;
+        align-items: center;
+        position: absolute;
+        top: 88%;
+    }
+
+    .button_of_buy-pic{
+        width: 300px;
+        height: 35px;
+    }
+
+    /* end home paige*/
+
+
+    /* menu with dishes paige*/
+
+    .menu{
+        height: 100%;
+        padding-bottom: 90px;
+    }
+
+    /* end menu paige*/
+
+
+    /* about */
+
+    .first_about_menu{
+        height: 100%;
+        background-image: url(../img/png/sushisetone.png);
+        background-repeat: no-repeat;
+        background-position: top right;
+        background-size: 48% auto;
+    }
+    .second_about_menu{
+        height: 100%;    padding-bottom: 28px;
+    }
+    .title_about{
+        padding-top: 33px;
+        font-weight: 600;
+        font-size: 60px;
+        line-height: 70px;
+        text-align: center;
+        color: #FFFFFF;
+    }
+    .first_about_subtitle{
+        padding-top: 20px;
+        max-width: 540px;
+        font-weight: 500;
+        font-size: 26px;
+        line-height: 31px;
+        color: #FFFFFF;
+    }
+    .container_of_text{
+        display: flex;
+        justify-content: right;
+        background-image: url(../img/png/sushisettwo.png);
+        background-repeat: no-repeat;
+        background-position: left;
+        padding-bottom: 30px;
+        background-size: 43% auto;
+    }
+    .second_about_subtitle{
+        max-width: 540px;
+        padding-top: 64px;
+        font-weight: 500;
+        font-size: 25px;
+        line-height: 30px;
+        color: #FFFFFF;
+    }
+
+    .button_of_order{
+        display: flex;
+        justify-content: center;
+    }
+
+    .button_of_order-pic
+    {
+        width: 467px;
+        height: 80px;
+    }
+
+
+    /* end about*/
+
+
+    /* main end */
+
+
+    /* footer */
+
+    .footer{
+        background: #DADDD8;
+        height: 100%;
+    }
+    .footer_title{
+        color: #222222;
+        text-align: center;
+        font-weight: 400;
+        font-size: 35px;
+        line-height: 45px;
+    }
+    .soc_media{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding-bottom: 6px;
+    }
+    .telegram{
+        padding-right: 10px;
+    }
+    .instagram{
+        padding-left: 10px;
+    }
+
+}
+
+@media (max-width: 940px) {
+    .wrapper{
+        max-width: 686px;
+        margin: 0 auto;
+    }
+
+
+    /*header*/
+
+    .header{
+        background-color: #222222;
+        height: 85px;
+    }
+
+    .site_title{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: 21px;
+    }
+
+    .header_logo{
+        width: 175px;
+        height: 58px;
+    }
+    .header_logo-pic{
+        width: 175px;
+        height: 58px;
+    }
+    .header_list{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .header_menu{
+        margin-right: 11px;
+    }
+
+    .header_menu:last-child{
+        margin-right: 0;
+    }
+
+    .header_link{
+        font-weight: 400;
+        font-size: 18px;
+        color: #FFFFFF;
+        text-decoration: none;
+    }
+
+    .header_active_link{
+        font-weight: 600;
+        font-size: 18px;
+        color: #FFFFFF;
+        text-decoration-line: underline;
+        text-underline-offset: 7px;
+        text-decoration-thickness: 1px;
+        text-decoration-color: rgba(255, 255, 255, 0.3);
+    }
+
+    .header_basket{
+        width: 175px;
+        height: 58px;
+    }
+
+    .header_basket-pic{
+        width: 175px;
+        height: 58px;
+    }
+
+
+    /*header end*/
+    /* main*/
+
+    /* home paige*/
+    .site_background{
+        background: #222222;
+    }
+    .first_job_menu{
+        height: 100%;
+        background-image: url(../img/png/Phon.png);
+        background-size: 65% auto;
+        background-repeat: no-repeat;
+        background-position: top right;
+    }
+    .first_main_title{
+        padding-top: 23px;
+        max-width: 336px;
+        font-weight: 500;
+        font-size: 37px;
+        line-height: 44px;
+        color: #FFFFFF;
+    }
+    .first_main_subtitle{
+        max-width: 234px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 18px;
+        color: #FFFFFF;
+        padding-bottom: 18px
+    }
+
+    .second_job_menu{
+        height: 100%;
+        padding-bottom: 37px;
+    }
+    .second_main_title{
+        text-align: center;
+        font-weight: 500;
+        font-size: 55px;
+        line-height: 66px;
+        color: #FFFFFF;
+    }
+
+    .button_of_order_b-pic{
+        width: 190px;
+        height: 66px;
+    }
+
+    .all_tiles{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .tile {
+        position: relative;
+        text-align: center;
+        width: 219px;
+        height: 288px;
+
+    }
+    .philadelphia-pic{
+        width: 219px;
+        height: 288px;
+    }
+
+    .nigiri-pic{
+        width: 219px;
+        height: 288px;
+    }
+
+    .california-pic{
+        width: 219px;
+        height: 288px;
+    }
+
+    .futomaki-pic{
+        width: 219px;
+        height: 288px;
+    }
+
+    .dragon-pic{
+        width: 219px;
+        height: 288px;
+    }
+
+    .gunkan-pic{
+        width: 219px;
+        height: 288px;
+    }
+
+    .text_of_tile{
+        text-align: center;
+        width: 219px;
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 18px;
+        position: absolute;
+        top: 65%;
+        color: #222222;
+    }
+    .button_of_buy{
+        width: 219px;
+        height: 26px;
+        align-items: center;
+        position: absolute;
+        top: 88%;
+    }
+
+    .button_of_buy-pic{
+        width: 219px;
+        height: 26px;
+    }
+
+    /* end home paige*/
+
+
+    /* menu with dishes paige*/
+
+    .menu{
+        height: 100%;
+        padding-bottom: 66px;
+    }
+
+    /* end menu paige*/
+
+
+    /* about */
+
+    .first_about_menu{
+        height: 100%;
+        background-image: url(../img/png/sushisetone.png);
+        background-repeat: no-repeat;
+        background-position: top right;
+        background-size: 48% auto;
+    }
+    .second_about_menu{
+        height: 100%;    padding-bottom: 20px;
+    }
+    .title_about{
+        padding-top: 24px;
+        font-weight: 600;
+        font-size: 44px;
+        line-height: 51px;
+        text-align: center;
+        color: #FFFFFF;
+    }
+    .first_about_subtitle{
+        padding-top: 15px;
+        max-width: 394px;
+        font-weight: 500;
+        font-size: 19px;
+        line-height: 23px;
+        color: #FFFFFF;
+    }
+    .container_of_text{
+        display: flex;
+        justify-content: right;
+        background-image: url(../img/png/sushisettwo.png);
+        background-repeat: no-repeat;
+        background-position: left;
+        padding-bottom: 22px;
+        background-size: 43% auto;
+    }
+    .second_about_subtitle{
+        max-width: 394px;
+        padding-top: 47px;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 22px;
+        color: #FFFFFF;
+    }
+
+    .button_of_order{
+        display: flex;
+        justify-content: center;
+    }
+
+    .button_of_order-pic
+    {
+        width: 341px;
+        height: 58px;
+    }
+
+
+    /* end about*/
+
+
+    /* main end */
+
+
+    /* footer */
+
+    .footer{
+        background: #DADDD8;
+        height: 100%;
+    }
+    .footer_title{
+        color: #222222;
+        text-align: center;
+        font-weight: 400;
+        font-size: 26px;
+        line-height: 33px;
+    }
+    .soc_media{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding-bottom: 4px;
+    }
+    .telegram{
+        padding-right: 10px;
+    }
+    .instagram{
+        padding-left: 10px;
+    }
+
+}
+@media (max-width: 690px) {
+    .wrapper{
+        max-width: 360px;
+        margin: 0 auto;
+    }
+
+
+    /*header*/
+
+    .header{
+        background-color: #222222;
+        height: 85px;
+    }
+
+    .site_title{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: 21px;
+    }
+
+    .header_logo{
+        width: 175px;
+        height: 58px;
+    }
+    .header_logo-pic{
+        width: 175px;
+        height: 58px;
+    }
+    .header_list{
+        display: none;
+    }
+
+    .header_basket{
+        display: none;
+    }
+
+    /* home paige*/
+    .site_background{
+        background: #222222;
+    }
+    .first_job_menu{
+        height: 100%;
+        background-image: url(../img/png/Phon.png);
+        background-size: 63% auto;
+        background-repeat: no-repeat;
+        background-position: right bottom 80%;
+    }
+    .first_main_title{
+        padding-top: 23px;
+        max-width: 160px;
+        font-weight: 500;
+        font-size: 30px;
+        line-height: 44px;
+        color: #FFFFFF;
+    }
+    .first_main_subtitle{
+        max-width: 300px;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 18px;
+        color: #FFFFFF;
+        padding-bottom: 18px
+    }
+
+    .second_job_menu{
+        height: 100%;
+        padding-bottom: 37px;
+    }
+    .second_main_title{
+        text-align: center;
+        font-weight: 500;
+        font-size: 55px;
+        line-height: 66px;
+        color: #FFFFFF;
+    }
+
+    .button_of_order_b{
+        display: flex;
+        justify-content: center;
+    }
+
+    .button_of_order_b-pic{
+        width: 190px;
+        height: 66px;
+    }
+
+    .all_tiles{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
+    .tile {
+        position: relative;
+        text-align: center;
+        width: 219px;
+        height: 288px;
+
+    }
+    .philadelphia-pic{
+        width: 219px;
+        height: 288px;
+    }
+
+    .nigiri-pic{
+        width: 219px;
+        height: 288px;
+    }
+
+    .california-pic{
+        width: 219px;
+        height: 288px;
+    }
+
+    .futomaki-pic{
+        width: 219px;
+        height: 288px;
+    }
+
+    .dragon-pic{
+        width: 219px;
+        height: 288px;
+    }
+
+    .gunkan-pic{
+        width: 219px;
+        height: 288px;
+    }
+
+    .text_of_tile{
+        text-align: center;
+        width: 219px;
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 18px;
+        position: absolute;
+        top: 65%;
+        color: #222222;
+    }
+    .button_of_buy{
+        width: 219px;
+        height: 26px;
+        align-items: center;
+        position: absolute;
+        top: 88%;
+    }
+
+    .button_of_buy-pic{
+        width: 219px;
+        height: 26px;
+    }
+
+    /* end home paige*/
+
+
+    /* menu with dishes paige*/
+
+    .menu{
+        height: 100%;
+        padding-bottom: 66px;
+    }
+
+    /* end menu paige*/
+
+
+    /* about */
+
+    .first_about_menu{
+        height: 100%;
+        background-image: none;
+    }
+    .second_about_menu{
+        height: 100%;    padding-bottom: 20px;
+    }
+    .title_about{
+        padding-top: 24px;
+        font-weight: 600;
+        font-size: 40px;
+        line-height: 51px;
+        text-align: center;
+        color: #FFFFFF;
+    }
+    .first_about_subtitle{
+        padding-top: 15px;
+        max-width: 330px;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 23px;
+        color: #FFFFFF;
+    }
+    .container_of_text{
+        display: flex;
+        justify-content: center;
+        background-position: top;
+        background-size: 330px 330px;
+        padding-bottom: 22px;
+    }
+    .second_about_subtitle{
+        max-width: 330px;
+        padding-top: 330px;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 22px;
+        color: #FFFFFF;
+    }
+    .mobile-menu{
+        display: block;
+    }
+}
